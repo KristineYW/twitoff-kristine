@@ -1,12 +1,11 @@
-# web_app/__init__.py
-
 from flask import Flask
-
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.book_routes import book_routes
 
-DATABASE_URL = "sqlite:///twitoff_kristine_development.db"  # using relative filepath
+
+DATABASE_URL = "sqlite:///twitoff_kristine_development.db"  # relative filepath
+
 
 def create_app():
     app = Flask(__name__)
@@ -23,4 +22,4 @@ def create_app():
 
 if __name__ == "__main__":
     my_app = create_app()
-    my_app.run(debug=True)
+    my_app.run(debug=True)  # web_app/__init__.py

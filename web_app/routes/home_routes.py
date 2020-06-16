@@ -1,4 +1,3 @@
-# web_app/routes/home_routes.py
 
 from flask import Blueprint
 
