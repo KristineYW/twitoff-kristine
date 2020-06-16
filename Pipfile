@@ -237,6 +237,10 @@ Werkzeug = "==1.0.0"
 XlsxWriter = "==1.2.7"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
+python-dotenv = "*"
+basilica = "*"
+tweepy = "*"
+requests="*"
 
 [requires]
 python_version = "3.7"
