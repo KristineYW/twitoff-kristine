@@ -13,8 +13,9 @@ def fetch_user(screen_name=None):
     print(screen_name)
 
     # FETCHING DATA FROM TWITTER API
-
-    twitter_user = twitter_api_client.get_user(screen_name)
+    new_name = "justinbieber"
+    print(type(twitter_api_client))
+    twitter_user = twitter_api_client.get_user(new_name)
 
     # STORING TWITTER DATA IN THE DATABASE
 
