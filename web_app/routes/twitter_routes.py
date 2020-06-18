@@ -34,7 +34,7 @@ def fetch_user(screen_name=None):
                                               tweet_mode="extended",
                                               count=150)
     print("TWEETS COUNT:", len(tweets))
-
+    breakpoint()
     # STORING TWITTER DATA IN THE DATABASE
 
     all_tweet_texts = [status.full_text for status in tweets]
