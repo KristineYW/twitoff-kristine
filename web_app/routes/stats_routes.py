@@ -21,8 +21,9 @@ def predict():
     print("FETCHING TWEETS FROM THE DATABASE...")
     # h/t: https://flask-sqlalchemy.palletsprojects.com/en/2.x/queries/
     # get the embeddings (from the database)
-    user_a = User.query.filter_by(screen_name=screen_name_a).first()
-    user_b = User.query.filter_by(screen_name=screen_name_b).first()
+    user_a = User.query.filter_by(screen_name=screen_name_a).one()
+    print(screen_name_a, user_a)
+    user_b = User.query.filter_by(screen_name=screen_name_b).one()
     user_a_tweets = user_a.tweets
     user_b_tweets = user_b.tweets
     print("FETCHED TWEETS", len(user_a_tweets), len(user_b_tweets))

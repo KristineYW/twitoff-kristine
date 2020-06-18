@@ -13,14 +13,13 @@ def fetch_user(screen_name=None):
     print(screen_name)
 
     # FETCHING DATA FROM TWITTER API
-    new_name = "justinbieber"
-    print(type(twitter_api_client))
-    twitter_user = twitter_api_client.get_user(new_name)
+    twitter_user = twitter_api_client.get_user(screen_name)
 
     # STORING TWITTER DATA IN THE DATABASE
 
     # get existing user from the db OR initialize a new one:
     db_user = User.query.get(twitter_user.id) or User(id=twitter_user.id)
+
     db_user.screen_name = twitter_user.screen_name
     db_user.name = twitter_user.name
     db_user.location = twitter_user.location
@@ -28,7 +27,6 @@ def fetch_user(screen_name=None):
     db.session.add(db_user)
     db.session.commit()
     # return "OK"
-    # breakpoint()
 
     # FETCH TWEETS
 
@@ -67,3 +65,5 @@ def fetch_user(screen_name=None):
     return "OK"
     # return render_template("user.html", user=db_user, tweets=statuses)
     # tweets=db_tweets
+
+
